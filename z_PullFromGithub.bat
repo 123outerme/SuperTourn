@@ -14,7 +14,7 @@ git pull origin master --allow-unrelated-histories
 	@cd /d "%folder%\SuperTourn"
 	@for /F "delims=" %%i in ('dir /b') do (rmdir "%%i" /s/q || del "%%i" /s/q)
 )
-@ROBOCOPY "C:\Program Files\Git\code\SuperTourn" %~dp0 *.c *.h *.txt *.ico *.rc *.png /MIR /XD dirs .git GtL GtL-bin
+@ROBOCOPY "C:\Program Files\Git\code\SuperTourn" %~dp0 *.c *.h *.txt *.ico *.rc *.png *.bat /MIR /XD dirs .git ST ST-bin
 @cd "C:\Program Files\Git\code\SuperTourn"
 @git init
 @git add -A
