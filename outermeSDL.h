@@ -1,7 +1,7 @@
 #ifndef OUTERMESDL_H_INCLUDED
 #define OUTERMESDL_H_INCLUDED
 
-/* ++ outermeSDL version 1.1 - last update 11/29/2017 ++
+/* ++ outermeSDL version 1.2 - last update 11/30/2017 ++
 
  error code -3; TTFs failed to load
  error code -2: SDL_ttf failed to initialize
@@ -36,11 +36,11 @@
 //#define CONFIG_FILE_NAME "sorceryConfig.ini"
 #define FONT_FILE_NAME "Px437_ITT_BIOS_X.ttf"
 #define FRAMERATE 60
-#define SCREEN_WIDTH TILE_SIZE * 20
-#define SCREEN_HEIGHT TILE_SIZE * 15
-#define TILE_SIZE 48
-#define WIDTH_IN_TILES SCREEN_WIDTH / TILE_SIZE
-#define HEIGHT_IN_TILES SCREEN_HEIGHT / TILE_SIZE
+#define SCREEN_WIDTH TILE_SIZE * WIDTH_IN_TILES
+#define SCREEN_HEIGHT TILE_SIZE * HEIGHT_IN_TILES
+#define TILE_SIZE 32
+#define WIDTH_IN_TILES 20
+#define HEIGHT_IN_TILES 15
 
 #define ANYWHERE_QUIT -1
 
@@ -94,5 +94,8 @@ TTF_Font* mainFont;
 int tilemap[HEIGHT_IN_TILES][WIDTH_IN_TILES];
 bool canDrawTiles;
 bool canDrawText;
+
+int screenWidth;
+int screenHeight;
 
 #endif // OUTERMESDL_H_INCLUDED

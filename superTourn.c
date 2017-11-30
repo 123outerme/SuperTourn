@@ -9,10 +9,10 @@ void initHurtbox(hurtbox* boxptr, int relX, int relY, int w, int h, hurtboxType 
     boxptr->hurtType = type;
 }
 
-void initHitbox(hitbox* boxptr, int x, int y, int w, int h, int frameOut, int activeLength, hitboxType type)
+void initHitbox(hitbox* boxptr, int relX, int relY, int w, int h, int frameOut, int activeLength, hitboxType type)
 {
-    boxptr->x = x;
-    boxptr->y = y;
+    boxptr->relX = relX;
+    boxptr->relY = relY;
     boxptr->w = w;
     boxptr->h = h;
     boxptr->onFrame = 0;
@@ -31,5 +31,5 @@ void initAttack(attack* attackPtr, hitbox* boxes, int frameLength, int dmg, int 
     attackPtr->boxes = boxes;
     attackPtr->frameLength = frameLength;
     attackPtr->damage = dmg;
-    attackPtr->kb = kb;
+    attackPtr->knockback = kb;
 }

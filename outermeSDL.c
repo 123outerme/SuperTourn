@@ -5,6 +5,10 @@ int initSDL(char* windowName, char* tilesetFilePath, char* fontFilePath, int win
 {
     int done = 0;
     mainWindow = NULL;
+
+    screenWidth = windowWidth;
+    screenHeight = windowHeight;
+
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) < 0)
     {
         printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
@@ -29,7 +33,7 @@ int initSDL(char* windowName, char* tilesetFilePath, char* fontFilePath, int win
         mainFont = NULL;
         canDrawText = true;
         canDrawTiles = true;
-        mainWindow = SDL_CreateWindow(windowName, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, windowWidth, windowHeight, SDL_WINDOW_SHOWN);
+        mainWindow = SDL_CreateWindow(windowName, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, windowWidth, windowHeight, SDL_WINDOW_SHOWN /*| SDL_WINDOW_FULLSCREEN_DESKTOP*/);
         if (!mainWindow)
         {
             printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
