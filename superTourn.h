@@ -1,12 +1,12 @@
 #include "outermeSDL.h"
 
 typedef enum {
-    none,  //0
-    grab,  //1  -- upon landing on a non-invincible hitbox, starts a grab
-    noPriority,  //2  -- only causes knockback on a sensitive hurtbox, has lowest priority
-    lowPriority,  //3  -- only causes knockback on sensitive/normal hurtboxes, only beats noPriority
-    midPriority,  //4  -- only causes knockback on sensitive/normal hurtboxes, only loses to highPriority
-    highPriority,  //5 -- causes knockback on all hurtboxes, doesn't lose
+    none,  //0  -- no hitbox at all
+    noPriority,  //1  -- only causes knockback on a sensitive hurtbox, has lowest priority
+    lowPriority,  //2  -- only causes knockback on sensitive/normal hurtboxes, only beats noPriority
+    midPriority,  //3  -- only causes knockback on sensitive/normal hurtboxes, only loses to highPriority
+    highPriority,  //4 -- causes knockback on all hurtboxes, doesn't lose
+    grab,  //5  -- upon landing on a non-invincible hitbox, starts a grab
 } hitboxType;
 
 typedef enum {
