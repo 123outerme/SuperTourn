@@ -6,8 +6,8 @@ int initSDL(char* windowName, char* tilesetFilePath, char* fontFilePath, int win
     int done = 0;
     mainWindow = NULL;
 
-    screenWidth = windowWidth;
-    screenHeight = windowHeight;
+    SCREEN_WIDTH = windowWidth;
+    SCREEN_HEIGHT = windowHeight;
 
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) < 0)
     {

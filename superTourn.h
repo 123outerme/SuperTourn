@@ -48,3 +48,22 @@ typedef struct {
     int damage;  //how much damage the attack does upon connecting
     int knockback;  //how much knockback the attack deals upon landing
 } attack;
+
+void initConfig(char* filePath);  //inits a new config file
+void initHurtbox(hurtbox* boxptr, int relX, int relY, int w, int h, hurtboxType type);  //constructs a new hurtbox struct
+void initHitbox(hitbox* boxptr, int relX, int relY, int w, int h, int frameOut, int activeLength, hitboxType type);  //constructs a new hitbox struct
+void initModel(model* modelPtr, hurtbox* boxes);  //constructs a new model struct
+void initAttack(attack* attackPtr, hitbox* boxes, int frameLength, int dmg, int kb);  //constructs a new attack struct
+int aMenu(int cursorID, char* title, char* opt1, char* opt2, char* opt3, char* opt4, char* opt5, const int options, int curSelect, SDL_Color bgColor, SDL_Color titleColorUnder, SDL_Color titleColorOver, SDL_Color textColor, bool border, bool isMain);
+
+#define SIZE_OF_SCANCODE_ARRAY 7
+int CUSTOM_SCANCODES[SIZE_OF_SCANCODE_ARRAY];
+#define SC_UP CUSTOM_SCANCODES[0]
+#define SC_DOWN CUSTOM_SCANCODES[1]
+#define SC_LEFT CUSTOM_SCANCODES[2]
+#define SC_RIGHT CUSTOM_SCANCODES[3]
+#define SC_INTERACT CUSTOM_SCANCODES[4]
+#define SC_MENU CUSTOM_SCANCODES[5]
+#define SC_ATTACK CUSTOM_SCANCODES[6]
+
+int FPS, targetTime;

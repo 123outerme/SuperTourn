@@ -36,8 +36,6 @@
 //#define CONFIG_FILE_NAME "sorceryConfig.ini"
 #define FONT_FILE_NAME "Px437_ITT_BIOS_X.ttf"
 #define FRAMERATE 60
-#define SCREEN_WIDTH TILE_SIZE * WIDTH_IN_TILES
-#define SCREEN_HEIGHT TILE_SIZE * HEIGHT_IN_TILES
 #define TILE_SIZE 32
 #define WIDTH_IN_TILES 20
 #define HEIGHT_IN_TILES 15
@@ -95,7 +93,7 @@ int tilemap[HEIGHT_IN_TILES][WIDTH_IN_TILES];
 bool canDrawTiles;
 bool canDrawText;
 
-int screenWidth;
-int screenHeight;
+int SCREEN_WIDTH;
+int SCREEN_HEIGHT;
 
 #endif // OUTERMESDL_H_INCLUDED
