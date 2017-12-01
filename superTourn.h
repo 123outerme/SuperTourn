@@ -27,7 +27,6 @@ typedef struct {
     int frameOut;  //the frame the attack starts to be active
     int activeLength;  //the length, in frames, of the active status
     hitboxType hitType;
-
 } hitbox;
 
 typedef struct {
@@ -40,7 +39,16 @@ typedef struct {
 
 typedef struct {
     hurtbox* boxes;  //hurtboxes for the given model
-} model;
+    int x;
+    int y;
+    int w;
+    int h;
+    int HP;
+    int maxHP;
+    sprite* sprites;  //x&y coords are in relatives
+    int dmgMult;
+    int spdMult;
+} fighter;
 
 typedef struct {
     hitbox* boxes;  //hitboxes for the given attack
