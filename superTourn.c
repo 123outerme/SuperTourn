@@ -37,7 +37,7 @@ void initHitbox(hitbox* boxptr, int relX, int relY, int w, int h, int frameOut, 
     boxptr->hitType = type;
 }
 
-void initFighter(model* fighterPtr, hurtbox* boxes, int x, int y, int w, int h, int maxHP, sprite* sprites, int dmgMult, int spdMult)
+void initFighter(fighter* fighterPtr, hurtbox* boxes, int x, int y, int w, int h, int maxHP, sprite* sprites, int dmgMult, int spdMult)
 {
     fighterPtr->boxes = boxes;
     fighterPtr->x = x;

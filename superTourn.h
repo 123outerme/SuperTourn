@@ -60,7 +60,7 @@ typedef struct {
 void initConfig(char* filePath);  //inits a new config file
 void initHurtbox(hurtbox* boxptr, int relX, int relY, int w, int h, hurtboxType type);  //constructs a new hurtbox struct
 void initHitbox(hitbox* boxptr, int relX, int relY, int w, int h, int frameOut, int activeLength, hitboxType type);  //constructs a new hitbox struct
-void initModel(model* modelPtr, hurtbox* boxes);  //constructs a new model struct
+void initFighter(fighter* fighterPtr, hurtbox* boxes, int x, int y, int w, int h, int maxHP, sprite* sprites, int dmgMult, int spdMult);  //constructs a new model struct
 void initAttack(attack* attackPtr, hitbox* boxes, int frameLength, int dmg, int kb);  //constructs a new attack struct
 int aMenu(int cursorID, char* title, char* opt1, char* opt2, char* opt3, char* opt4, char* opt5, const int options, int curSelect, SDL_Color bgColor, SDL_Color titleColorUnder, SDL_Color titleColorOver, SDL_Color textColor, bool border, bool isMain);
 
