@@ -19,10 +19,7 @@ typedef enum {
 } hurtboxType;
 
 typedef struct {
-    int relX;
-    int relY;
-    int w;
-    int h;
+    SDL_Rect rect;
     int onFrame;  //the current frame the hitbox is on
     int frameOut;  //the frame the attack starts to be active
     int activeLength;  //the length, in frames, of the active status
@@ -30,24 +27,18 @@ typedef struct {
 } hitbox;
 
 typedef struct {
-    int relX;  //x-coord relative to left x of character
-    int relY;  //y-coord relative to top y of character
-    int w;
-    int h;
+    SDL_Rect rect;
     hurtboxType hurtType;
 } hurtbox;
 
 typedef struct {
     hurtbox* boxes;  //hurtboxes for the given model
-    int x;
-    int y;
-    int w;
-    int h;
+    SDL_Rect rect;
     int HP;
     int maxHP;
     sprite* sprites;  //x&y coords are in relatives
-    int dmgMult;
-    int spdMult;
+    double dmgMult;
+    double spdMult;
 } fighter;
 
 typedef struct {
@@ -58,9 +49,9 @@ typedef struct {
 } attack;
 
 void initConfig(char* filePath);  //inits a new config file
-void initHurtbox(hurtbox* boxptr, int relX, int relY, int w, int h, hurtboxType type);  //constructs a new hurtbox struct
-void initHitbox(hitbox* boxptr, int relX, int relY, int w, int h, int frameOut, int activeLength, hitboxType type);  //constructs a new hitbox struct
-void initFighter(fighter* fighterPtr, hurtbox* boxes, int x, int y, int w, int h, int maxHP, sprite* sprites, int dmgMult, int spdMult);  //constructs a new model struct
+void initHurtbox(hurtbox* boxptr, SDL_Rect rect, hurtboxType type);  //constructs a new hurtbox struct
+void initHitbox(hitbox* boxptr, SDL_Rect rect, int frameOut, int activeLength, hitboxType type);  //constructs a new hitbox struct
+void initFighter(fighter* fighterPtr, hurtbox* boxes, SDL_Rect rect, int maxHP, sprite* sprites, double dmgMult, double spdMult);  //constructs a new model struct
 void initAttack(attack* attackPtr, hitbox* boxes, int frameLength, int dmg, int kb);  //constructs a new attack struct
 int aMenu(int cursorID, char* title, char* opt1, char* opt2, char* opt3, char* opt4, char* opt5, const int options, int curSelect, SDL_Color bgColor, SDL_Color titleColorUnder, SDL_Color titleColorOver, SDL_Color textColor, bool border, bool isMain);
 

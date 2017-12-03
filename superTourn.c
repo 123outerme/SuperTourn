@@ -16,34 +16,25 @@ void initConfig(char* filePath)
     //saveConfig(filePath);
 }
 
-void initHurtbox(hurtbox* boxptr, int relX, int relY, int w, int h, hurtboxType type)
+void initHurtbox(hurtbox* boxptr, SDL_Rect rect, hurtboxType type)
 {
-    boxptr->relX = relX;
-    boxptr->relY = relY;
-    boxptr->w = w;
-    boxptr->h = h;
+    boxptr->rect = rect;
     boxptr->hurtType = type;
 }
 
-void initHitbox(hitbox* boxptr, int relX, int relY, int w, int h, int frameOut, int activeLength, hitboxType type)
+void initHitbox(hitbox* boxptr, SDL_Rect rect, int frameOut, int activeLength, hitboxType type)
 {
-    boxptr->relX = relX;
-    boxptr->relY = relY;
-    boxptr->w = w;
-    boxptr->h = h;
+    boxptr->rect = rect;
     boxptr->onFrame = 0;
     boxptr->frameOut = frameOut;
     boxptr->activeLength = activeLength;
     boxptr->hitType = type;
 }
 
-void initFighter(fighter* fighterPtr, hurtbox* boxes, int x, int y, int w, int h, int maxHP, sprite* sprites, int dmgMult, int spdMult)
+void initFighter(fighter* fighterPtr, hurtbox* boxes, SDL_Rect rect, int maxHP, sprite* sprites, double dmgMult, double spdMult)
 {
     fighterPtr->boxes = boxes;
-    fighterPtr->x = x;
-    fighterPtr->y = y;
-    fighterPtr->w = w;
-    fighterPtr->h = h;
+    fighterPtr->rect = rect;
     fighterPtr->HP = maxHP;
     fighterPtr->maxHP = maxHP;
     fighterPtr->sprites = sprites;
