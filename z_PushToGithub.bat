@@ -1,4 +1,4 @@
-@ROBOCOPY %cd% "C:\Program Files\Git\code\SuperTourn" *.c *.h *.txt *.ico *.bin *.rc *.bat *.png *.ttf /MIR /XD dirs .git
+@ROBOCOPY %cd% "C:\Program Files\Git\code\SuperTourn" *.c *.h *.txt *.ico *.bin *.rc *.bat *.png *.ttf /MIR /XD dirs .git ST ST-bin builds
 @cd "C:\Program Files\Git\code\SuperTourn"
 @set commitMessage=""
 @IF [%1]==[] (
